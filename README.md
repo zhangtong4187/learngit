@@ -7,3 +7,34 @@
 客户端： android Actinium、windows v2ray 可用同一个服务端。
 
 youtube频道：https://www.youtube.com/channel/UClceV39J1Z_9D4_mHkBZrMg
+
+
+下拉第一个里填写CONFIG_JSON
+第二个里复制下面的代码，注意uuid要填写。这个很重要，后面还要用到。UUID生成网址：https://www.uuidgenerator.net/
+
+{
+  "log": {
+    "loglevel": "warning"
+  },
+  "inbound": {
+    "protocol": "vmess",
+    "port": 8080,
+    "settings": {
+      "clients": [
+        {
+          "id": "uuid换成你自己的",
+          "alterId": 64,
+          "security": "aes-128-cfb"
+        }
+      ]
+    },
+    "streamSettings": {
+      "network": "ws"
+    }
+  },
+  "inboundDetour": [],
+  "outbound": {
+    "protocol": "freedom",
+   "settings": {}
+  }
+}
